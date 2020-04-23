@@ -1,0 +1,28 @@
+.header {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.row{
+    margin: auto;
+    text-align: center;
+}
+
+.row div {
+    margin-top: 10px;
+}
+
+.card {
+    margin-top: 6vh;
+}
+
+.graphContainer {
+    width: 60vh;
+    margin: auto;
+    margin-top: 6vh;
+}
+
+.graphSvg {
+    border: 1px solid black;
+    margin: auto;
+}

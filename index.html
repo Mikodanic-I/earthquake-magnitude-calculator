@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Earthquake magnitude calculator</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Magnitude calculator</h1>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div style="text-align: center">
+        <p style="font-size: 2.5vh"><b>M = log <i>A</i> + 1.449 &bull; log <i>d</i> + 2.554</b></p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <input
+              id="amplitudeInput"
+              type="number"
+              class="form-control
+              form-control-lg"
+              placeholder="Amplitude"
+              oninput="calculateValues()">
+        </div>
+        <div class="col-md-4">
+          <input
+              id="distanceInput"
+              type="number"
+              class="form-control form-control-lg"
+              placeholder="Distance from epicenter"
+              oninput="calculateValues(); graphAxes()">
+        </div>
+        <div class="col-md-4">
+          <input
+              id="magnitudeInput"
+              type="number"
+              class="form-control
+              form-control-lg"
+              placeholder="Magnitude"
+              disabled
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="graphContainer card shadow-sm">
+    <svg id="coordinateSystem" class="graphSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMinYMin meet">
+      <circle cx="10" cy="10" r="1.5" fill="blue" />
+      <path d="M100 0 V200" fill="transparent" stroke="black" stroke-width="0.5%"/>
+      <path d="M0 100 H200" fill="transparent" stroke="black" stroke-width="0.5%"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- Javascript logic -->
+<script src="script.js"></script>
+
+<!-- JQuery, Popper.js, Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
