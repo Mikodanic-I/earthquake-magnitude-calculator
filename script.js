@@ -1,3 +1,5 @@
+
+//  TODO: Refactor everything using canvas logic
 function calculateValues() {
     const amplitude = document.getElementById('amplitudeInput')
     const distance = document.getElementById('distanceInput')
