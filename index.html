@@ -30,6 +30,7 @@
               class="form-control
               form-control-lg"
               placeholder="Amplitude"
+              min="1"
               oninput="calculateValues(); graphCurve()">
         </div>
         <div class="col-md-4">
@@ -38,6 +39,7 @@
               type="number"
               class="form-control form-control-lg"
               placeholder="Distance from epicenter"
+              min="1"
               oninput="calculateValues(); graphCurve()">
         </div>
         <div class="col-md-4">
@@ -53,8 +55,8 @@
       </div>
     </div>
   </div>
-  <button onclick="changeZoom(5)">Zoom in</button>
-  <button onclick="changeZoom(-5)">Zoom out</button>
+  <button class="btn btn-secondary" id="zoomIn" onclick="changeZoom(5)">Zoom in</button>
+  <button class="btn btn-secondary" id="zoomOut" onclick="changeZoom(-5)">Zoom out</button>
   <div class="graphContainer card shadow-sm">
     <svg
             id="coordinateSystem"

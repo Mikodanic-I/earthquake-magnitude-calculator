@@ -65,8 +65,7 @@ function graphCurve() {
     //  Reset graph
     xyAxis()
 
-    if (!distanceValue) return
-
+    if (!distanceValue || distanceValue === '0') return
 
     //  Create logarithmic curve
     const axesArray = []
@@ -102,7 +101,7 @@ function graphCurve() {
     }
 
     //  Show result dot
-    if (amplitudeValue) {
+    if (amplitudeValue && amplitudeValue !== '0') {
         const dotY = magnitudeFormula(amplitudeValue, distanceValue)
 
         const magnitudeDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
@@ -123,9 +122,9 @@ function changeZoom(value) {
     value > 0 ? magnitudeDotSize += 0.2 : magnitudeDotSize -= 0.2;
     xyAxis()
     graphCurve()
-}
 
-function clearGraph() {
+    zoom >= 60 ? zoomIn.setAttribute('disabled', true) : zoomIn.removeAttribute('disabled')
+    zoom <= 10 ? zoomOut.setAttribute('disabled', true) : zoomOut.removeAttribute('disabled')
 }
 
 function magnitudeFormula(amplitudeValue, distanceValue) {
