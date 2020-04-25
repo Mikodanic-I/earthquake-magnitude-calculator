@@ -30,7 +30,7 @@
               class="form-control
               form-control-lg"
               placeholder="Amplitude"
-              oninput="calculateValues()">
+              oninput="calculateValues(); graphCurve()">
         </div>
         <div class="col-md-4">
           <input
@@ -38,7 +38,7 @@
               type="number"
               class="form-control form-control-lg"
               placeholder="Distance from epicenter"
-              oninput="calculateValues(); graphCurve(this)">
+              oninput="calculateValues(); graphCurve()">
         </div>
         <div class="col-md-4">
           <input
@@ -53,15 +53,15 @@
       </div>
     </div>
   </div>
-
-
-  <!-- TODO: Refactor with canvas -->
+  <button onclick="changeZoom(5)">Zoom in</button>
+  <button onclick="changeZoom(-5)">Zoom out</button>
   <div class="graphContainer card shadow-sm">
-    <svg id="coordinateSystem" class="graphSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMinYMin meet">
-      <path d="M200 0 V400" stroke="black" stroke-width="0.5%"/>
-      <path d="M0 200 H400" stroke="black" stroke-width="0.5%"/>
-      <path d="M200 400 H195" stroke="black" stroke-width="0.5%"/>
-    </svg>
+    <svg
+            id="coordinateSystem"
+            class="graphSvg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 400 400"
+            preserveAspectRatio="xMinYMin meet" />
   </div>
 </div>
 
